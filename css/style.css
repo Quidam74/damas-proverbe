@@ -21,7 +21,7 @@
 .proverbe .proverbe-item::before{
 	display: block;
 	background-color: transparent;
-	content: "&nbsp;";
+	content: '☺';
 	position:relative;
 	top:1;
 	left: 0;
