@@ -74,6 +74,12 @@ function initDelete(){
 		button.addEventListener("click", function(item){
 			deletee(item)
 		})
+		button.addEventListener("mouseover", function(item){
+			hoverEffecteOn(item,allProverbe)
+		})
+		button.addEventListener("mouseout", function(item){
+			hoverEffecteOff(item,allProverbe)
+		})
 
 	})
 	
@@ -94,6 +100,23 @@ function deletee(elem){
 	})
 
 	
+	
+
+}
+
+function hoverEffecteOn(elem,allProverbe){
+	allProverbe.forEach(function(item){
+		if(elem.currentTarget.dataset.id == item.dataset.id)
+			item.style.backgroundColor = "red"
+	})
+	
+
+}
+function hoverEffecteOff(elem,allProverbe){
+	allProverbe.forEach(function(item){
+		if(elem.currentTarget.dataset.id == item.dataset.id)
+			item.style.backgroundColor = "transparent"
+	})
 	
 
 }

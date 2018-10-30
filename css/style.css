@@ -6,6 +6,7 @@
 .main-title{
 	text-align: center;
 	font-family: 'Roboto', sans-serif;
+	font-size: 60px;
 }
 
 
@@ -13,7 +14,9 @@
 	margin: 0 260px;
 }
 .proverbe .proverbe-item{
-
+	text-align: center;
+	font-size: 22px;
+	margin: 40px 0;
 }
 
 
@@ -89,6 +92,7 @@
 .proverbe-deleteZone .contain{
 	display: flex;
 	flex-direction: column-reverse;
+	margin: 20px;
 
 }
 .proverbe-deleteZone .contain input{
@@ -126,6 +130,11 @@
 .proverbe-deleteZone-active{
 	right: 0px;
 	
+}
+
+.proverbe-deleteZone-icon i{
+	font-size: 50px;
+	padding:30px;
 }
 
 .hide{
