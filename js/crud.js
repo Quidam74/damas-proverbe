@@ -12,8 +12,22 @@ function initCreate(){
 	})
 }
 function create(){
-	console.log(document.querySelector(".inputZone-textarea").innerHTML)
+	var text  = document.querySelector(".inputZone-textarea").value
+	console.log(text)
 
+	fetch("service.php?action=add&value="+text, {
+		credentials: "same-origin",
+
+	})
+	.then(response => {
+		console.log(response)
+		return response.json()
+	})
+	.then(proverbe => {
+		console.log(proverbe)
+		read()
+	})
+	
 }
 
 function read(){
@@ -26,17 +40,60 @@ function read(){
 	})
 	.then(proverbs => {
 		var zonneInser = document.querySelector(".proverbe")
-		
+		zonneInser.innerHTML =""
 		
 		for (var i = proverbs.length - 1; i >= 0; i--) {
-			var elem ="<article class='proverbe-item'>"+proverbs[i].value+"</article>";
-			zonneInser.innerHTML +=elem;
+			var elem ="<article data-id='"+proverbs[i].id+"' class='proverbe-item'>"+proverbs[i].value+"</article>";
+			zonneInser.innerHTML = elem +zonneInser.innerHTML;
 			
 		}
 		
-		console.log(proverbs);
+		initDelete()
 	})
 
 
+
+}
+
+function initDelete(){
+	var allProverbe = document.querySelectorAll(".proverbe-item")
+	var zoneInser = document.querySelector(".proverbe-deleteZone .contain")
+	var mark ="<i class='fas fa-times'></i>"
+	var element =""
+	zoneInser.innerHTML =""
+	allProverbe.forEach(function(elem)
+	{
+		element ="<div data-id='"+elem.dataset.id+"' class='proverbe-deleteZone-icon'>"+mark+"</div>"
+		zoneInser.innerHTML = element +zoneInser.innerHTML
+		
+	})
+
+	var deleteButton = document.querySelectorAll(".proverbe-deleteZone-icon")
+
+	deleteButton.forEach(function(button){
+		button.addEventListener("click", function(item){
+			deletee(item)
+		})
+
+	})
+	
+}
+
+function deletee(elem){
+	fetch("service.php?action=delete&id="+elem.currentTarget.dataset.id, {
+		credentials: "same-origin",
+
+	})
+	.then(response => {
+		console.log(response)
+		return response.json()
+	})
+	.then(proverbs => {
+		console.log("a")
+		read()
+	})
+
+	
+	
 
 }
