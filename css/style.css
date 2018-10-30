@@ -1,0 +1,74 @@
+*{
+	font-family: 'Lato', sans-serif;
+}
+
+
+.main-title{
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+.proverbe{
+	margin: 0 260px;
+}
+.proverbe .proverbe-item{
+
+}
+
+.proverbe-inputZone{
+	background-color: blue;
+	position: fixed;
+	left: -246px;
+	top: 0px;
+	height: 100vh;
+	transition: left .6s ease-in-out;
+}
+
+
+
+.proverbe-inputZone div{
+	display: flex;
+	flex-direction: column-reverse;
+
+}
+.proverbe-inputZone div input{
+	margin: 20px;
+	width: 200px;
+}
+
+
+.proverbe-inputZone textarea{
+	margin: 20px;
+	width: 200px;
+	font-size: 25px;
+	height: 80vh;
+}
+
+.proverbe-showInputZone{
+
+	position: fixed;
+	left: 0px;
+	top: 50vh;
+	width: 0; 
+	height: 0; 
+	z-index: 2;
+	border-top: 30px solid transparent;
+	border-bottom: 30px solid transparent;
+	border-left: 30px solid red;
+	transition: left .6s ease-in-out, transform .6s ease-in-out;
+
+}
+.proverbe-showInputZone-active{
+	left: 216px;
+	transform: rotate(-180deg);
+
+}
+.proverbe-inputZone-active{
+	left: 0px;
+	
+}
+
+.hide{
+	display: none!important;;
+}
