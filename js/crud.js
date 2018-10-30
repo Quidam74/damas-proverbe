@@ -105,9 +105,11 @@ function deletee(elem){
 }
 
 function hoverEffecteOn(elem,allProverbe){
-	allProverbe.forEach(function(item){
+	allProverbe.forEach(function(item,index){
 		if(elem.currentTarget.dataset.id == item.dataset.id)
-			item.style.backgroundColor = "red"
+			{
+				item.classList.add("willBeDelete")
+			}
 	})
 	
 
@@ -115,7 +117,7 @@ function hoverEffecteOn(elem,allProverbe){
 function hoverEffecteOff(elem,allProverbe){
 	allProverbe.forEach(function(item){
 		if(elem.currentTarget.dataset.id == item.dataset.id)
-			item.style.backgroundColor = "transparent"
+			item.classList.remove("willBeDelete")
 	})
 	
 

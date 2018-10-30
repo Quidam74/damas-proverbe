@@ -18,7 +18,36 @@
 	font-size: 22px;
 	margin: 40px 0;
 }
+.proverbe .proverbe-item::before{
+	display: block;
+	background-color: transparent;
+	content: "&nbsp;";
+	position:relative;
+	top:1;
+	left: 0;
+	/*width: 0;
+	height: 0;
+	border-left: 30px solid transparent;
+	border-right: : 30px solid transparent;
+	border-top: 30px solid #5f55f9;*/
 
+
+}
+.proverbe .proverbe-item.willBeDelete::before{
+	display: block;
+	background-color: #9cfd94;
+	content: "cliquez pour supprimer";
+	position:relative;
+	top:1;
+	left: 0;
+	/*width: 0;
+	height: 0;
+	border-left: 30px solid transparent;
+	border-right: : 30px solid transparent;
+	border-top: 30px solid #5f55f9;*/
+
+
+}
 
 
 .proverbe-inputZone{
